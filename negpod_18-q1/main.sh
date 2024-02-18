@@ -61,4 +61,17 @@ echo "Student email updated"
 else
 echo "Invalid email format. Try Again"
 fi
-		;;    
+		;;   
+     2)
+                read -p "Enter updated age: " new_age
+sed -i "s/, $update_id$/, $new_age, $update_id/" "$students_file"
+                    echo "Age updated."
+		;;
+	 *)
+		echo "Invalid Choice"
+esac
+
+           else
+                echo "Student with ID $update_id not found."
+            fi
+            ;;    

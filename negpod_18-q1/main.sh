@@ -48,3 +48,8 @@ case $choice in
 	    echo "ID not found"
 	       fi
             ;;
+        4)
+	    read -p "Enter ID to update: " update_id
+	     if grep -q ", $update_id$" "$students_file"; then
+		    read -p "Choose what to update (1 for email, 2 for age): " update_choice
+		    case $update_choice in    

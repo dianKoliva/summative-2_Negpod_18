@@ -40,7 +40,7 @@ Now the application is running successfully.
 2. Oreste Abizera
 3. Marie Elyse UYIRINGIYE
 4. Alain Quentin
-5. Kyla Onchweri
+5. Kyla Ochweri
 
 
 *This is the end of the project description*

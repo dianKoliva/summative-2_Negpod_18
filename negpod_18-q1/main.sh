@@ -38,4 +38,13 @@ case $choice in
                 echo "No students found."
             fi
             ;;
-        
+        3)
+	       read -p "Enter student ID to delete: " delete_id
+	       #checking if ID exists
+	       if grep -q ", $delete_id$" "$students_file"; then
+            sed -i "/, $delete_id$/d" "$students_file"
+            echo "Student with ID $delete_id deleted."
+    else
+	    echo "ID not found"
+	       fi
+            ;;

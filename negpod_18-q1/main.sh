@@ -50,4 +50,26 @@ case $choice in
             ;;
 	     4)
  read -p "Enter student ID to update: " update_id
-e
+
+# Check if the student ID exists in the file
+if grep -q ", $update_id$" "$students_file"; then
+    read -p "Enter updated email: " new_email
+    if [[ $new_email =~ ^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$ ]]; then
+        read -p "Enter updated age: " new_age
+        sed -i "s/^[^,]*, [^,]*, $update_id$/$new_email, $new_age, $update_id/" "$students_file"
+        echo "Student record updated"
+    else
+        echo "Invalid email format"
+    fi
+else
+    echo "Student with ID $update_id not found."
+fi
+;;
+    5)
+            echo "Exiting ......"
+            exit ;;
+    *)
+            echo "Invalid Choice"
+esac
+done
+

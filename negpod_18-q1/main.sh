@@ -49,9 +49,7 @@ case $choice in
 	       fi
             ;;
 	     4)
-	   read -p "Enter ID to update: " update_id
-
-if grep -q ", $update_id$" "$students_file"; then
+	  if grep -q ", $update_id$" "$students_file"; then
     read -p "Choose what to update (1 for email, 2 for age): " update_choice
 
     case $update_choice in
@@ -66,18 +64,16 @@ if grep -q ", $update_id$" "$students_file"; then
             ;;
         2)
             read -p "Enter new age: " new_age
-            sed -i "s/, $update_id$/, $new_age, $update_id/" "$students_file"
+            sed -i "s/, [0-9]\+, $update_id$/, $new_age, $update_id/" "$students_file"
             echo "Age updated."
             ;;
         *)
             echo "Invalid Choice"
             ;;
-esac
-
-           else
-                echo "Student with ID $update_id not found."
-            fi
-            ;;
+    esac
+else
+    echo "Student with ID $update_id not found."
+fi ;;
     5)
 	    echo "Exiting ......"
 	    exit ;;

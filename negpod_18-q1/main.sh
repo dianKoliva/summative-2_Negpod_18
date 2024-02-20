@@ -51,7 +51,7 @@ case $choice in
 	     4)  
 	          echo "update student"
                   read -p "Enter student's Id: " studentId
-                  if grep -q ",$studentId$" "$student_file"; then
+                  if grep -q ", $update_id$" "$students_file"; then
         
                       read -p "Enter new student email: " new_email
                       read -p "Enter new Age: " new_age

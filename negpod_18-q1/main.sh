@@ -49,7 +49,7 @@ case $choice in
 	       fi
             ;;
 	     4)
-    read -p "Enter student ID to update: " update_id
+   read -p "Enter student ID to update: " update_id
 
 # Check if the student ID exists in the file
 if grep -q ", $update_id$" "$students_file"; then

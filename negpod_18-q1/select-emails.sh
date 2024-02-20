@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 ##specify your input file
-students_file="students-list_0923.txt"
+students_file="students-list_1023.txt"
 ##creating the file student-emails.txt
 output_file="student-emails.txt"
 ##check if the file exists and is not empty.

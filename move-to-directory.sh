@@ -9,3 +9,4 @@ fi
 mv main.sh students-list_1023.txt select-emails.sh student-emails.txt "$directory"
 
 echo "files moved successfully"
+

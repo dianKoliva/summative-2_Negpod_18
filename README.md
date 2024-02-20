@@ -11,25 +11,21 @@ bash
 git clone https://github.com/dianKoliva/summative-2_Negpod_18.git
 
 
-2. *Navigate to the cloned directory*:
-bash
+1. *Navigate to the cloned directory*:
 cd summative-2_Negpod_18/
 
 
-3. *Navigate to negpod_7-q1 directory*:
-bash
+1. *Navigate to negpod_18-q1 directory*:
 cd negpod_18-q1/
 
 
-4. *Run main program*:
-bash
+1. *Run main program*:
 ./main.sh
 
 
 Choose the option to suit your intended action from 1 to 5
 
-5. *Get an email list of students*:
-bash
+1. *Get an email list of students*:
 ./select-emails.sh
 
 

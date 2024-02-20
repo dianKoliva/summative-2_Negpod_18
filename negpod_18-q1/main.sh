@@ -55,17 +55,12 @@ case $choice in
 if grep -q ", $update_id$" "$students_file"; then
     read -p "Enter updated email: " new_email
     if [[ $new_email =~ ^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$ ]]; then
-        # Update the student email in the file
-        sed -i "s/^[^,]*, [^,]*, $update_id$/$new_email,/" "$students_file"
+        read -p "Enter updated age: " new_age
+        sed -i "s/^[^,]*, [^,]*, $update_id$/$new_email,$new_age,$update_id/" "$students_file"
         echo "Student email updated"
     else
         echo "Invalid email format"
     fi
-
-    read -p "Enter updated age: " new_age
-    # Update the student age in the file
-    sed -i "s/, [0-9]\+, $update_id$/, $new_age, $update_id/" "$students_file"
-    echo "Student age updated"
 else
     echo "Student with ID $update_id not found."
 fi
